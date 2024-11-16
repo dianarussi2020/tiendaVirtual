@@ -7,6 +7,22 @@
     function media(){
         return BASE_URL."/Assets";
     }
+    function headerAdmin($data=[]){
+        $view_header ="Views/Templates/header_admin.php";
+        if (file_exists($view_header)) {
+            require_once($view_header);
+        } else {
+            echo "Error: archivo header_admin.php no encontrado.";
+        }
+    }
+    function footerAdmin($data=[]){
+        $view_footer ="Views/Templates/footer_admin.php";
+        if (file_exists($view_footer)) {
+            require_once($view_footer);
+        } else {
+            echo "Error: archivo footer_admin.php no encontrado.";
+        }
+    }
     //Muestra informacion formateada
     function dep($data){
         $format = print_r('<pre>');
