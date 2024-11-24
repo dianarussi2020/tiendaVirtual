@@ -57,7 +57,7 @@
 
             if($intIdRol == 0){
                 //crear
-                $request_rol = $this->model->inseertRol($strRol, $strDescripcion,$intStatus);
+                $request_rol = $this->model->insertRol($strRol, $strDescripcion,$intStatus);
                 $option = 1;
             }else{
                 //actualizar
