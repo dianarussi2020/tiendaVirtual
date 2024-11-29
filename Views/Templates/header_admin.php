@@ -16,6 +16,8 @@
             ) : 'Sin título'; ?></title>
     <!-- Main CSS-->
     <link rel="stylesheet" type="text/css" href="<?= media(); ?>/css/main.css">
+     <!-- bootstrap select-->
+     <link rel="stylesheet" type="text/css" href="<?= media(); ?>/css/bootstrap-select.min.css">
     <!-- CSS personalizado-->
     <link rel="stylesheet" type="text/css" href="<?= media(); ?>/css/style.css">
 </head>

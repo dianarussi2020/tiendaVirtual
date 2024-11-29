@@ -68,7 +68,6 @@ document.addEventListener("DOMContentLoaded", function () {
       ? new XMLHttpRequest()
       : new ActiveXObject("Microsoft.XMLHTTP");
     let ajaxUrl = base_url + "/Roles/setRol";
-    console.log(ajaxUrl);
     let formData = new FormData(formRol);
     request.open("POST", ajaxUrl, true);
     request.send(formData);

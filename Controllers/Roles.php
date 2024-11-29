@@ -35,6 +35,22 @@
             die();#finalizar procesos
         }
 
+        public function getSelectRoles()
+		{
+			$htmlOptions = "";
+			$arrData = $this->model->selectRoles();
+			if(count($arrData) > 0 ){
+				for ($i=0; $i < count($arrData); $i++) { 
+					if($arrData[$i]['status'] == 1 ){
+					$htmlOptions .= '<option value="'.$arrData[$i]['id'].'">'
+                                    .$arrData[$i]['nombrerol'].'</option>';
+					}
+				}
+			}
+			echo $htmlOptions;
+			die();		
+		}
+
         public function getRol(int $idrol){
             $intIdRol = intval(strClean($idrol));
             if($intIdRol > 0){
