@@ -1,20 +1,22 @@
 <?php
 class Conexion{
-	protected $conect;# sea visible desde clase mysql
+	private $conect;
 
 	public function __construct(){
-		$connectionString = "mysql:host=" . DB_HOST . ";dbname=" . DB_NAME . ";charset=" . DB_CHARSET;
+		$connectionString = "mysql:host=".DB_HOST.";dbname=".DB_NAME.";charset=".DB_CHARSET;
 		try{
 			$this->conect = new PDO($connectionString, DB_USER, DB_PASSWORD);
 			$this->conect->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-			//echo "Conexion exitosa";
+		    //echo "conexión exitosa";
 		}catch(PDOException $e){
-			$this->conect = null;
+			$this->conect = 'Error de conexión';
 		    echo "ERROR: " . $e->getMessage();
 		}
 	}
-	public function getConnect(){
+
+	public function conect(){
 		return $this->conect;
 	}
 }
+
 ?>

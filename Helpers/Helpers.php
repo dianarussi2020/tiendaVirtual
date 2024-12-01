@@ -1,39 +1,37 @@
-<?php
-    //retorna la url del proyecto
-    function base_url(){
-        return BASE_URL;
-    }
-    //retorna la url de assets
-    function media(){
+<?php 
+
+	//Retorla la url del proyecto
+	function base_url()
+	{
+		return BASE_URL;
+	}
+    //Retorla la url de Assets
+    function media()
+    {
         return BASE_URL."/Assets";
     }
-    function headerAdmin($data=[]){
-        $view_header ="Views/Templates/header_admin.php";
-        if (file_exists($view_header)) {
-            require_once($view_header);
-        } else {
-            echo "Error: archivo header_admin.php no encontrado.";
-        }
+    function headerAdmin($data="")
+    {
+        $view_header = "Views/Template/header_admin.php";
+        require_once ($view_header);
     }
-    function footerAdmin($data=[]){
-        $view_footer ="Views/Templates/footer_admin.php";
-        if (file_exists($view_footer)) {
-            require_once($view_footer);
-        } else {
-            echo "Error: archivo footer_admin.php no encontrado.";
-        }
+    function footerAdmin($data="")
+    {
+        $view_footer = "Views/Template/footer_admin.php";
+        require_once ($view_footer);        
     }
-    //Muestra informacion formateada
-    function dep($data){
-        $format = print_r('<pre>');
+	//Muestra información formateada
+	function dep($data)
+    {
+        $format  = print_r('<pre>');
         $format .= print_r($data);
         $format .= print_r('</pre>');
         return $format;
     }
-    //Mostrar modals
-    function getModal(string $nameModal, $data){
-        $view_modal = "Views/Templates/Modals/{$nameModal}.php";
-        require_once $view_modal; 
+    function getModal(string $nameModal, $data)
+    {
+        $view_modal = "Views/Template/Modals/{$nameModal}.php";
+        require_once $view_modal;        
     }
     //Elimina exceso de espacios entre palabras
     function strClean($strCadena){
@@ -93,9 +91,11 @@
         $token = $r1.'-'.$r2.'-'.$r3.'-'.$r4;
         return $token;
     }
-     //Formato para valores monetarios
-     function formatMoney($cantidad){
+    //Formato para valores monetarios
+    function formatMoney($cantidad){
         $cantidad = number_format($cantidad,2,SPD,SPM);
         return $cantidad;
     }
-?>
+    
+
+ ?>
