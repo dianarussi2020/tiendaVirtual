@@ -3,6 +3,10 @@
 	class Usuarios extends Controllers{
 		public function __construct()
 		{
+			session_start();
+			if(isset($_SESSION['login'])){ // si existe la var session
+				header('location: '.base_url().'/dashboard');
+			}
 			parent::__construct();
 		}
 
@@ -16,8 +20,7 @@
 		}
 
 		public function setUsuario(){
-			if($_POST){
-				
+			if($_POST){	
 				if(empty($_POST['txtIdentificacion']) || empty($_POST['txtNombre']) || empty($_POST['txtApellido']) || empty($_POST['txtTelefono']) || empty($_POST['txtEmail']) || empty($_POST['listRolid']) || empty($_POST['listStatus']) )
 				{
 					$arrResponse = array("status" => false, "msg" => 'Datos incorrectos.');
