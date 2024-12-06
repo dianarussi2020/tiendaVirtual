@@ -13,4 +13,9 @@ const SPD = ","; #Separador de decimales
 const SPM = "."; #Separadorde millar 24,1989.00
 //Simbolo moneda
 const MONEY = "$";
+// Datos envio de correo
+const NOMBRE_REMITENTE = "Tienda Virtual";
+conSt EMAIL_REMITENTE = "no-reply@abelosh.com";
+const NOMBRE_EMPESA = "Tienda Virtual";
+const WEB_EMPRESA = "www.abelosh.com";
 ?>
